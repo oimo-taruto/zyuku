@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主要AIモデル完全比較ガイド【2026年6月最新版】</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 印刷時の設定（PDF化するときに綺麗に出力されるように） */
+        @media print {
+            body { background-color: white !important; }
+            .page-break-inside-avoid { page-break-inside: avoid; }
+            .shadow-lg, .shadow-sm, .shadow { box-shadow: none !important; border: 1px solid #e5e7eb !important; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900 pb-20 selection:bg-indigo-200 font-sans">
+
+    <header class="bg-gradient-to-br from-gray-900 via-indigo-900 to-slate-900 text-white py-16 px-4 text-center shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="inline-block bg-indigo-500/30 text-indigo-200 px-4 py-1.5 rounded-full text-sm font-bold tracking-wider mb-6 border border-indigo-500/50">
+                2026年6月 最新版
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black mb-6 leading-tight tracking-tight">
+                主要AIモデル完全比較ガイド
+            </h1>
+            <p class="text-xl md:text-2xl text-indigo-100 font-medium mb-8">
+                高校生・大学生のための徹底活用術と注意点
+            </p>
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-left border border-white/20 max-w-3xl mx-auto">
+                <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-book-open text-indigo-300"></i> エグゼクティブサマリー
+                </h3>
+                <p class="text-indigo-50 leading-relaxed">
+                    2026年現在、AI活用は学習・受験・研究において事実上の必須スキルです。本資料では、<strong class="text-white">ChatGPT・Gemini (+ NotebookLM)・Claude・Perplexity</strong>の4大ツールを、料金・機能・「そのアプリでしかできないこと」の観点から構成を統一して網羅的に整理しています。
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-12 space-y-16">
+
+        <section>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-black text-gray-900 inline-block relative">
+                    1. 4大AIモデル 徹底解剖
+                    <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1.5 bg-indigo-600 rounded-full"></div>
+                </h2>
+            </div>
+
+            <div class="mb-12 rounded-2xl overflow-hidden shadow-lg border border-emerald-200 bg-white page-break-inside-avoid">
+                <div class="bg-emerald-600 text-white px-6 py-4 flex items-center gap-4">
+                    <div class="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
+                        <i class="fa-solid fa-robot text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold">ChatGPT (OpenAI)</h2>
+                        <p class="text-emerald-100 text-sm mt-1">最新モデル: GPT-5.5系</p>
+                    </div>
+                </div>
+                <div class="p-6 md:p-8 space-y-8">
+                    <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200">
+                        <h3 class="text-lg font-bold text-emerald-800 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-bolt"></i> 概要と最大の強み
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed font-medium">世界最大のAIチャットサービス。汎用性の高さ、GPTs (カスタムボット) のエコシステム、そしてPythonコードを実行してグラフを画像出力できるData Analysis機能が最大の強み。</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="border border-gray-200 rounded-xl p-5 bg-gray-50/50">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4 pb-2 border-b border-gray-200 flex items-center gap-2">
+                                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-sm">無料版</span>このアプリでしかできない事
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex gap-3 text-gray-700"><i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i><div><span class="font-bold">GPTsを使う:</span><span class="text-sm block mt-0.5 text-gray-600">世界中のユーザーが作った特化型AI（数学・論文検索等）を利用可能</span></div></li>
+                                <li class="flex gap-3 text-gray-700"><i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i><div><span class="font-bold">音声会話モード:</span><span class="text-sm block mt-0.5 text-gray-600">マイクでリアルタイム会話。英語スピーキング練習に最適</span></div></li>
+                                <li class="flex gap-3 text-gray-700"><i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i><div><span class="font-bold">メモリ機能:</span><span class="text-sm block mt-0.5 text-gray-600">「高校2年生」「数学が苦手」などを記憶させておける</span></div></li>
+                            </ul>
+                        </div>
+                        <div class="border border-emerald-200 rounded-xl p-5 bg-emerald-50/50">
+                            <h3 class="text-lg font-bold text-emerald-800 mb-4 pb-2 border-b border-emerald-200 flex items-center gap-2">
+                                <span class="bg-emerald-600 text-white px-2 py-1 rounded text-sm">有料版</span>このアプリでしかできない事
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex gap-3 text-emerald-900"><i class="fa-solid fa-bolt text-emerald-600 mt-1"></i><div><span class="font-bold">GPTsを自作する:</span><span class="text-sm block mt-0.5 opacity-80">塾専用・科目専用などの完全カスタムAIを設計</span></div></li>
+                                <li class="flex gap-3 text-emerald-900"><i class="fa-solid fa-bolt text-emerald-600 mt-1"></i><div><span class="font-bold">高度なデータ分析:</span><span class="text-sm block mt-0.5 opacity-80">PDFやExcelを読み込みグラフを画像出力</span></div></li>
+                                <li class="flex gap-3 text-emerald-900"><i class="fa-solid fa-bolt text-emerald-600 mt-1"></i><div><span class="font-bold">Images 2.0:</span><span class="text-sm block mt-0.5 opacity-80">日本語テキスト入りの図解画像を高品質生成</span></div></li>
+                                <li class="flex gap-3 text-emerald-900"><i class="fa-solid fa-bolt text-emerald-600 mt-1"></i><div><span class="font-bold">Deep Research:</span><span class="text-sm block mt-0.5 opacity-80">複数ソースを統合した深掘り調査(月600回)</span></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 text-sm text-gray-600 bg-gray-50 p-3 rounded-lg border border-gray-200">
+                        <i class="fa-solid fa-circle-info text-gray-400 mt-0.5"></i>
+                        <p>【制限】無料版(GPT-5.5 Instant)は5時間あたり10メッセージまで。画像生成1日3枚、ファイルUP1日3ファイルまで。高度推論モデルは有料のみ。</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-4 border-t border-gray-100 pt-6">
+                        <div class="md:col-span-2">
+                            <h3 class="text-md font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap text-indigo-600"></i>大学受験での具体的な活用術
+                            </h3>
+                            <ul class="space-y-2">
+                                <li class="flex gap-2 text-sm text-gray-700"><i class="fa-solid fa-chevron-right text-indigo-400 mt-1 text-xs"></i><span>GPTsの「Consensus」で論文根拠つきの解説を得る</span></li>
+                                <li class="flex gap-2 text-sm text-gray-700"><i class="fa-solid fa-chevron-right text-indigo-400 mt-1 text-xs"></i><span>音声会話モードで英語スピーキング練習</span></li>
+                                <li class="flex gap-2 text-sm text-gray-700"><i class="fa-solid fa-chevron-right text-indigo-400 mt-1 text-xs"></i><span>一問一答特化GPTで暗記科目(歴史・生物)を反復</span></li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex flex-col justify-center">
+                            <h3 class="text-sm font-bold text-gray-500 mb-1 flex items-center gap-1">
+                                <i class="fa-solid fa-wallet"></i> 料金プラン・学割
+                            </h3>
+                            <p class="text-sm font-medium text-gray-800">Plus: 約3,000円/月<br>※公式学割なし。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12 rounded-2xl overflow-hidden shadow-lg border border-blue-200 bg-white page-break-inside-avoid">
+                <div class="bg-blue-600 text-white px-6 py-4 flex items-center gap-4">
+                    <div class="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
+                        <i class="fa-solid fa-wand-magic-sparkles text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold">Gemini (Google) & NotebookLM</h2>
+                        <p class="text-blue-100 text-sm mt-1">最新モデル: Gemini 3 Deep Think</p>
+                    </div>
+                </div>
+                <div class="p-6 md:p-8 space-y-8">
+                    <div class="p-4 rounded-xl bg-blue-50 border border-blue-200">
+                        <h3 class="text-lg font-bold text-blue-800 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-bolt"></i> 概要と最大の強み
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed font-medium">Googleの全サービスと直接連携できるのが最大の特徴。最新モデルは数学・物理の国際オリンピックで金メダルレベル（数学ベンチマーク世界1位）を誇り、理数系に極めて強い。</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="border border-gray-200 rounded-xl p-5 bg-gray-50/50">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4 pb-2 border-b border-gray-200 flex items-center gap-2">
+                                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-sm">無料版</span>このアプリでしかできない事
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex gap-3 text-gray-700"><i class="fa-solid fa-circle-check text-blue-600 mt-1"></i><div><span class="font-bold">Google連携:</span><span class="text-sm block mt-0.5 text-gray-600">Docsへの出力、Gmail下書き、カレンダー登録が直結</span></div></li>
+                                <li class="flex gap-3 text-gray-700"><i class="fa-solid fa-circle-check text-blue-600 mt-1"></i><div><span class="font-bold">図解生成:</span><span class="text-sm block mt-0.5 text-gray-600">テキストから視覚的サマリー画像を生成(無料版では最高峰)</span></div></li>
+                                <li class="flex gap-3 text-gray-700"><i class="fa-solid fa-circle-check text-blue-600 mt-1"></i><div><span class="font-bold">Gems作成:</span><span class="text-sm block mt-0.5 text-gray-600">無料で特化型ボットを自作・保存可能</span></div></li>
+                            </ul>
+                        </div>
+                        <div class="border border-blue-200 rounded-xl p-5 bg-blue-50/50">
+                            <h3 class="text-lg font-bold text-blue-800 mb-4 pb-2 border-b border-blue-200 flex items-center gap-2">
+                                <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm">有料版</span>このアプリでしかできない事
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex gap-3 text-blue-900"><i class="fa-solid fa-bolt text-blue-600 mt-1"></i><div><span class="font-bold">スライド直接保存:</span><span class="text-sm block mt-0.5 opacity-80">AI生成スライドをGoogleスライド形式で出力</span></div></li>
+                                <li class="flex gap-3 text-blue-900"><i class="fa-solid fa-bolt text-blue-600 mt-1"></i><div><span class="font-bold">NotebookLM Pro:</span><span class="text-sm block mt-0.5 opacity-80">自己資料特化AIの制限が大幅に緩和される</span></div></li>
+                                <li class="flex gap-3 text-blue-900"><i class="fa-solid fa-bolt text-blue-600 mt-1"></i><div><span class="font-bold">動画生成(Veo):</span><span class="text-sm block mt-0.5 opacity-80">テキストから動画クリップを生成</span></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 text-sm text-gray-600 bg-gray-50 p-3 rounded-lg border border-gray-200">
+                        <i class="fa-solid fa-circle-info text-gray-400 mt-0.5"></i>
+                        <p>【NotebookLM(番外編)】「自分の資料だけを読み込む」ため嘘(ハルシネーション)が極少。授業プリントの整理に最強。無料版でも十分実用可能。</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-4 border-t border-gray-100 pt-6">
+                        <div class="md:col-span-2">
+                            <h3 class="text-md font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap text-indigo-600"></i>大学受験での具体的な活用術
+                            </h3>
+                            <ul class="space-y-2">
+                                <li class="flex gap-2 text-sm text-gray-700"><i class="fa-solid fa-chevron-right text-indigo-400 mt-1 text-xs"></i><span>難易度の高い数学・物理の解説を求める</span></li>
+                                <li class="flex gap-2 text-sm text-gray-700"><i class="fa-solid fa-chevron-right text-indigo-400 mt-1 text-xs"></i><span>授業PDFをNotebookLMに入れ、予想問題を自動生成</span></li>
+                                <li class="flex gap-2 text-sm text-gray-700"><i class="fa-solid fa-chevron-right text-indigo-400 mt-1 text-xs"></i><span>NotebookLMの音声解説(Podcast風)で通学中に復習</span></li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-xl border border-blue-200 flex flex-col justify-center">
+                            <h3 class="text-sm font-bold text-blue-800 mb-1 flex items-center gap-1">
+                                <i class="fa-solid fa-wallet"></i> 料金プラン・学割
+                            </h3>
+                            <p class="text-sm font-bold text-blue-900">Google AI Pro: 約2,900円/月</p>
+                            <p class="text-xs text-blue-700 mt-1">★大学生は大学メール認証で<strong class="text-red-600">最大15ヶ月無料</strong>キャンペーンあり</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12 rounded-2xl overflow-hidden shadow-lg border border-orange-200 bg-white page-break-inside-avoid">
+                <div class="bg-orange-600 text-white px-6 py-4 flex items-center gap-4">
+                    <div class="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
+                        <i class="fa-solid fa-brain text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold">Claude (Anthropic)</h2>
+                        <p class="text-orange-100 text-sm mt-1">最新モデル: Sonnet 4.5 / Opus 4.5</p>
+                    </div>
+                </div>
+                <div class="p-6 md:p-8 space-y-8">
+                    <div class="p-4 rounded-xl bg-orange-50 border border-orange-200">
+                        <h3 class="text-lg font-bold text-orange-800 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-bolt"></i> 概要と最大の強み
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed font-medium">「文章の質」と「安全性」を最優先に設計。日本語の長文作成・論理的文章・コードレビューで群を抜く。解説プリントやレポート作成は全AI中最高品質。2026年に無料版が大幅強化。</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="border border-gray-200 rounded-xl p-5 bg-gray-50/50">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4 pb-2 border-b border-gray-200 flex items-center gap-2">
+                                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-sm">無料版</span>このアプリでしかできない事
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex gap-3 text-gray-700"><i class="fa-solid fa-circle-check text-orange-600 mt-1"></i><div><span class="font-bold">Artifacts (プレビュー):</span><span class="text-sm block mt-0.5 text-gray-600">生成したコードやWebを右画面でプレビュー。見ながら修正可能</span></div></li>
+                                <li class="flex gap-3 text-gray-700"><i class="fa-solid fa-circle-check text-orange-600 mt-1"></i><div><span class="font-bold">Projects機能:</span><span class="text-sm block mt-0.5 text-gray-600">会話や資料を整理して長期記憶として保持</span></div></li>
+                                <li class="flex gap-3 text-gray-700"><i class="fa-solid fa-circle-check text-orange-600 mt-1"></i><div><span class="font-bold">ファイル分析 & Web検索:</span><span class="text-sm block mt-0.5 text-gray-600">PDF/画像分析、Web検索が無料版でも利用可能に</span></div></li>
+                            </ul>
+                        </div>
+                        <div class="border border-orange-200 rounded-xl p-5 bg-orange-50/50">
+                            <h3 class="text-lg font-bold text-orange-800 mb-4 pb-2 border-b border-orange-200 flex items-center gap-2">
+                                <span class="bg-orange-600 text-white px-2 py-1 rounded text-sm">有料版</span>このアプリでしかできない事
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex gap-3 text-orange-900"><i class="fa-solid fa-bolt text-orange-600 mt-1"></i><div><span class="font-bold">Claude Code:</span><span class="text-sm block mt-0.5 opacity-80">ローカル環境でコードを自動実行・デバッグする本格機能</span></div></li>
+                                <li class="flex gap-3 text-orange-900"><i class="fa-solid fa-bolt text-orange-600 mt-1"></i><div><span class="font-bold">超長文コンテキスト:</span><span class="text-sm block mt-0.5 opacity-80">20万トークン対応。教科書1冊分をまるごと読み込める</span></div></li>
+                                <li class="flex gap-3 text-orange-900"><i class="fa-solid fa-bolt text-orange-600 mt-1"></i><div><span class="font-bold">拡張思考(無制限):</span><span class="text-sm block mt-0.5 opacity-80">複雑な問題に深く考えてから回答するモード</span></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-4 border-t border-gray-100 pt-6">
+                        <div class="md:col-span-2">
+                            <h3 class="text-md font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap text-indigo-600"></i>大学受験での具体的な活用術
+                            </h3>
+                            <ul class="space-y-2">
+                                <li class="flex gap-2 text-sm text-gray-700"><i class="fa-solid fa-chevron-right text-indigo-400 mt-1 text-xs"></i><span>自分の答案を読み込ませ「論理的におかしい点」を指摘させる</span></li>
+                                <li class="flex gap-2 text-sm text-gray-700"><i class="fa-solid fa-chevron-right text-indigo-400 mt-1 text-xs"></i><span>小論文・英作文の添削（全AIで最も自然で高品質）</span></li>
+                                <li class="flex gap-2 text-sm text-gray-700"><i class="fa-solid fa-chevron-right text-indigo-400 mt-1 text-xs"></i><span>「高校生向けに微分を解説するプリントを作って」で教材生成</span></li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex flex-col justify-center">
+                            <h3 class="text-sm font-bold text-gray-500 mb-1 flex items-center gap-1">
+                                <i class="fa-solid fa-wallet"></i> 料金プラン・学割
+                            </h3>
+                            <p class="text-sm font-medium text-gray-800">Pro: 約3,100円/月<br>※公式学割なし。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12 rounded-2xl overflow-hidden shadow-lg border border-indigo-200 bg-white page-break-inside-avoid">
+                <div class="bg-indigo-600 text-white px-6 py-4 flex items-center gap-4">
+                    <div class="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
+                        <i class="fa-solid fa-magnifying-glass text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold">Perplexity AI</h2>
+                        <p class="text-indigo-100 text-sm mt-1">検索特化・複数モデル統合型</p>
+                    </div>
+                </div>
+                <div class="p-6 md:p-8 space-y-8">
+                    <div class="p-4 rounded-xl bg-indigo-50 border border-indigo-200">
+                        <h3 class="text-lg font-bold text-indigo-800 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-bolt"></i> 概要と最大の強み
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed font-medium">「AI搭載検索エンジン」。すべての回答に出典(URL)が明示されるため、嘘(ハルシネーション)のリスクが最も低く、リアルタイムの最新情報や論文・ニュースの調査に最適。</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="border border-gray-200 rounded-xl p-5 bg-gray-50/50">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4 pb-2 border-b border-gray-200 flex items-center gap-2">
+                                <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-sm">無料版</span>このアプリでしかできない事
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex gap-3 text-gray-700"><i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i><div><span class="font-bold">出典付き検索:</span><span class="text-sm block mt-0.5 text-gray-600">全回答に根拠となるサイトのリンクが付く(レポート等に必須)</span></div></li>
+                                <li class="flex gap-3 text-gray-700"><i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i><div><span class="font-bold">Spaces (学習スペース):</span><span class="text-sm block mt-0.5 text-gray-600">科目ごとに情報や関連ファイルをまとめて整理可能</span></div></li>
+                                <li class="flex gap-3 text-gray-700"><i class="fa-solid fa-circle-check text-indigo-600 mt-1"></i><div><span class="font-bold">Pro Search (1日5回):</span><span class="text-sm block mt-0.5 text-gray-600">AIが自ら検索キーワードを考えて深く調査</span></div></li>
+                            </ul>
+                        </div>
+                        <div class="border border-indigo-200 rounded-xl p-5 bg-indigo-50/50">
+                            <h3 class="text-lg font-bold text-indigo-800 mb-4 pb-2 border-b border-indigo-200 flex items-center gap-2">
+                                <span class="bg-indigo-600 text-white px-2 py-1 rounded text-sm">有料版</span>このアプリでしかできない事
+                            </h3>
+                            <ul class="space-y-3">
+                                <li class="flex gap-3 text-indigo-900"><i class="fa-solid fa-bolt text-indigo-600 mt-1"></i><div><span class="font-bold">複数モデル切り替え:</span><span class="text-sm block mt-0.5 opacity-80">GPT-4o, Claude, Gemini等を1つの画面で切り替えて使える</span></div></li>
+                                <li class="flex gap-3 text-indigo-900"><i class="fa-solid fa-bolt text-indigo-600 mt-1"></i><div><span class="font-bold">高度検索が無制限:</span><span class="text-sm block mt-0.5 opacity-80">Pro Search / Deep Research が実質使い放題</span></div></li>
+                                <li class="flex gap-3 text-indigo-900"><i class="fa-solid fa-bolt text-indigo-600 mt-1"></i><div><span class="font-bold">ファイル分析無制限:</span><span class="text-sm block mt-0.5 opacity-80">PDF・CSV・画像の読み込みが無制限</span></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-4 border-t border-gray-100 pt-6">
+                        <div class="md:col-span-2">
+                            <h3 class="text-md font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-graduation-cap text-indigo-600"></i>大学受験での具体的な活用術
+                            </h3>
+                            <ul class="space-y-2">
+                                <li class="flex gap-2 text-sm text-gray-700"><i class="fa-solid fa-chevron-right text-indigo-400 mt-1 text-xs"></i><span>英語長文の背景知識調査（出典付きで信頼性の高い情報を入手）</span></li>
+                                <li class="flex gap-2 text-sm text-gray-700"><i class="fa-solid fa-chevron-right text-indigo-400 mt-1 text-xs"></i><span>時事問題・小論文テーマの最新情報をニュースから収集</span></li>
+                                <li class="flex gap-2 text-sm text-gray-700"><i class="fa-solid fa-chevron-right text-indigo-400 mt-1 text-xs"></i><span>(有料のみ) 同じ問題を複数モデルで解かせて比較検証する</span></li>
+                            </ul>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-200 flex flex-col justify-center">
+                            <h3 class="text-sm font-bold text-indigo-800 mb-1 flex items-center gap-1">
+                                <i class="fa-solid fa-wallet"></i> 料金プラン・学割
+                            </h3>
+                            <p class="text-sm font-bold text-indigo-900">Pro: 約3,000円/月</p>
+                            <p class="text-xs text-indigo-700 mt-1">★<strong class="text-red-600">SoftBank・ワイモバイル・LINEMO</strong>契約者は<strong class="text-red-600">6ヶ月無料</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="page-break-inside-avoid">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-black text-gray-900 inline-block relative">
+                    2. 4大モデル 総合比較表
+                    <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1.5 bg-indigo-600 rounded-full"></div>
+                </h2>
+            </div>
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-x-auto">
+                <table class="w-full text-left border-collapse min-w-[800px]">
+                    <thead>
+                        <tr class="bg-gray-50 border-b border-gray-200 text-sm text-gray-600">
+                            <th class="p-4 font-bold w-48">比較項目</th>
+                            <th class="p-4 font-bold text-emerald-700 bg-emerald-50/50">ChatGPT</th>
+                            <th class="p-4 font-bold text-blue-700 bg-blue-50/50">Gemini</th>
+                            <th class="p-4 font-bold text-orange-700 bg-orange-50/50">Claude</th>
+                            <th class="p-4 font-bold text-indigo-700 bg-indigo-50/50">Perplexity</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm text-gray-800 divide-y divide-gray-100">
+                        <tr>
+                            <td class="p-4 font-bold bg-gray-50/50">無料版の実用性</td>
+                            <td class="p-4">◯ (GPTs使用可)</td>
+                            <td class="p-4 font-bold text-blue-700">◎ (Google連携/Gems)</td>
+                            <td class="p-4 font-bold text-orange-700">◎ (26年強化済)</td>
+                            <td class="p-4 font-bold text-indigo-700">◎ (検索特化)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold bg-gray-50/50">学生向け特典</td>
+                            <td class="p-4">なし</td>
+                            <td class="p-4"><span class="text-blue-600 font-bold">CPで最大15ヶ月無料</span></td>
+                            <td class="p-4">なし</td>
+                            <td class="p-4"><span class="text-indigo-600 font-bold">ソフバン系6ヶ月無料</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold bg-gray-50/50">数学の難問精度</td>
+                            <td class="p-4">△ (回数制限厳しい)</td>
+                            <td class="p-4 font-bold text-blue-700">◎ (世界1位)</td>
+                            <td class="p-4 text-gray-400">-</td>
+                            <td class="p-4">△</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold bg-gray-50/50">日本語文章作成</td>
+                            <td class="p-4 text-gray-400">-</td>
+                            <td class="p-4">◯</td>
+                            <td class="p-4 font-bold text-orange-700">◎ (全AIで最高)</td>
+                            <td class="p-4">△</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold bg-gray-50/50">最新情報の取得</td>
+                            <td class="p-4 text-gray-400">-</td>
+                            <td class="p-4 text-gray-400">-</td>
+                            <td class="p-4">◯ (無料で検索可)</td>
+                            <td class="p-4 font-bold text-indigo-700">◎ (出典付き)</td>
+                        </tr>
+                        <tr class="bg-gray-50/30">
+                            <td class="p-4 font-bold text-xs text-gray-500 text-center" colspan="5">各モデル特有の強み</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold bg-gray-50/50">図解・グラフ作成</td>
+                            <td class="p-4">有料のみ高品質</td>
+                            <td class="p-4 font-bold text-blue-700">◎ (無料でも可)</td>
+                            <td class="p-4 text-gray-400">×</td>
+                            <td class="p-4 text-gray-400">×</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold bg-gray-50/50">コーディング支援</td>
+                            <td class="p-4">◯</td>
+                            <td class="p-4">◯</td>
+                            <td class="p-4 font-bold text-orange-700">◎ (Artifacts等)</td>
+                            <td class="p-4">△</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold bg-gray-50/50">カスタムボット</td>
+                            <td class="p-4 font-bold text-emerald-700">◎ (GPTs・有料)</td>
+                            <td class="p-4 font-bold text-blue-700">◎ (Gems・無料)</td>
+                            <td class="p-4 text-gray-400">×</td>
+                            <td class="p-4 text-gray-400">×</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold bg-gray-50/50">複数モデル切替</td>
+                            <td class="p-4 text-gray-400">×</td>
+                            <td class="p-4 text-gray-400">×</td>
+                            <td class="p-4 text-gray-400">×</td>
+                            <td class="p-4 font-bold text-indigo-700">◎ (有料版のみ)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="page-break-inside-avoid">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-black text-gray-900 inline-block relative">
+                    3. 大学受験 × AI活用 シナリオ別ガイド
+                    <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1.5 bg-indigo-600 rounded-full"></div>
+                </h2>
+            </div>
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+                <div class="divide-y divide-gray-100">
+                    <div class="p-6 hover:bg-gray-50 flex flex-col md:flex-row gap-4 md:gap-8 items-start">
+                        <div class="md:w-1/3 shrink-0">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">数学・物理 (計算・論証)</h3>
+                            <div class="inline-flex items-center gap-1 bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs font-bold border border-indigo-100"><i class="fa-solid fa-bolt"></i> DeepSeek / Gemini / Claude</div>
+                        </div>
+                        <div class="md:w-2/3 text-gray-700 text-sm leading-relaxed">完全無料で数学の難問を解くならDeepSeekかGemini Free。自分の解答の論理的ミスを指摘させるならClaudeが最適。Gemini Gemsで類題の自動生成も可能。</div>
+                    </div>
+                    <div class="p-6 hover:bg-gray-50 flex flex-col md:flex-row gap-4 md:gap-8 items-start">
+                        <div class="md:w-1/3 shrink-0">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">英語 (長文・英作・会話)</h3>
+                            <div class="inline-flex items-center gap-1 bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs font-bold border border-indigo-100"><i class="fa-solid fa-bolt"></i> ChatGPT / Claude / Perplexity</div>
+                        </div>
+                        <div class="md:w-2/3 text-gray-700 text-sm leading-relaxed">ChatGPTの音声モードで英会話練習。Claudeで英作文の論理・表現の最高品質な添削を受ける。長文の背景知識調査には出典付きのPerplexityを活用。</div>
+                    </div>
+                    <div class="p-6 hover:bg-gray-50 flex flex-col md:flex-row gap-4 md:gap-8 items-start">
+                        <div class="md:w-1/3 shrink-0">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">国語・小論文</h3>
+                            <div class="inline-flex items-center gap-1 bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs font-bold border border-indigo-100"><i class="fa-solid fa-bolt"></i> Claude</div>
+                        </div>
+                        <div class="md:w-2/3 text-gray-700 text-sm leading-relaxed">Claudeに「この文章の論理構造を整理して」と指示し現代文の要約練習。「反論を3つ挙げて」と指示し多角的視点の訓練を行う。</div>
+                    </div>
+                    <div class="p-6 hover:bg-gray-50 flex flex-col md:flex-row gap-4 md:gap-8 items-start">
+                        <div class="md:w-1/3 shrink-0">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">社会・理科 (暗記・理解)</h3>
+                            <div class="inline-flex items-center gap-1 bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs font-bold border border-indigo-100"><i class="fa-solid fa-bolt"></i> NotebookLM / Gemini</div>
+                        </div>
+                        <div class="md:w-2/3 text-gray-700 text-sm leading-relaxed">教科書PDFをNotebookLMに読み込ませて一問一答やフラッシュカードを生成。Geminiでイメージしにくい概念を図解化。</div>
+                    </div>
+                    <div class="p-6 hover:bg-gray-50 flex flex-col md:flex-row gap-4 md:gap-8 items-start">
+                        <div class="md:w-1/3 shrink-0">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">学習計画・進捗管理</h3>
+                            <div class="inline-flex items-center gap-1 bg-indigo-50 text-indigo-700 px-2 py-1 rounded text-xs font-bold border border-indigo-100"><i class="fa-solid fa-bolt"></i> Gemini</div>
+                        </div>
+                        <div class="md:w-2/3 text-gray-700 text-sm leading-relaxed">「苦手単元リストから優先順位をつけて1ヶ月計画を作って」と指示。GeminiならGoogleカレンダーに直接連携して予定を登録可能。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-break-inside-avoid bg-amber-50 -mx-4 px-4 py-12 md:rounded-3xl md:mx-0 border border-amber-200">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-black text-amber-900 inline-block relative">
+                    4. AIを使う上での「絶対ルール」
+                    <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1.5 bg-amber-500 rounded-full"></div>
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-amber-300">
+                    <h3 class="font-bold text-amber-900 flex items-center gap-2 mb-3">
+                        <i class="fa-solid fa-shield-halved text-amber-500 text-xl"></i> ハルシネーション（嘘）への対策
+                    </h3>
+                    <p class="text-sm text-gray-700 mb-3">AIは「それらしい嘘」を自信満々に出力します。数値・年号・事実は必ず教科書等の一次情報源で確認すること。</p>
+                    <div class="bg-amber-100/50 p-3 rounded text-sm font-bold text-amber-800">
+                        鉄則：AIは「答え」ではなく「仮説生成・整理の補助」として使う
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-amber-300">
+                    <h3 class="font-bold text-amber-900 flex items-center gap-2 mb-3">
+                        <i class="fa-solid fa-brain text-amber-500 text-xl"></i> 自分の「思考力」を維持する
+                    </h3>
+                    <p class="text-sm text-gray-700 mb-3">AIを使いこなすほど「自分で考える力」が弱まる危険があります。回答を鵜呑みにせず「なぜそうなるか」を自分で説明できる状態を保つこと。</p>
+                    <div class="bg-amber-100/50 p-3 rounded text-sm font-bold text-amber-800">
+                        鉄則：AIは答えを出す道具ではなく「思考を加速するパートナー」
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+                    <h3 class="font-bold text-gray-800 mb-2 text-sm"><i class="fa-solid fa-user-lock mr-2"></i>個人情報・機密情報を入力しない</h3>
+                    <p class="text-xs text-gray-600">無料AIでは入力データが学習に再利用される可能性があります。氏名・学校名・成績データは絶対に入力しないこと。</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+                    <h3 class="font-bold text-gray-800 mb-2 text-sm"><i class="fa-solid fa-comment-dots mr-2"></i>プロンプト（指示）の質を上げる</h3>
+                    <p class="text-xs text-gray-600">✕「微分を教えて」<br>◯「高校2年生です。微分の合成関数で詰まっています。例題を使って躓きやすい点を指摘して」</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-break-inside-avoid pb-12">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-black text-gray-900 inline-block relative">
+                    5. コスト戦略：学生向け最適プラン
+                    <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-20 h-1.5 bg-indigo-600 rounded-full"></div>
+                </h2>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- A: 無料 -->
+                <div class="bg-gradient-to-r from-emerald-600 to-teal-700 rounded-2xl p-6 md:p-8 text-white shadow-lg relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-10"><i class="fa-solid fa-wallet text-[120px]"></i></div>
+                    <h3 class="text-xl font-bold mb-3 relative z-10">A. 完全無料で運用したい場合（最強の5本立て）</h3>
+                    <p class="text-emerald-50 text-sm md:text-base relative z-10 leading-relaxed">
+                        <strong class="text-white text-lg block mb-2"><i class="fa-solid fa-check mr-2"></i>ChatGPT + Gemini + NotebookLM + Perplexity + DeepSeek</strong>
+                        この5つ（全て無料版）をブックマークしておけば、受験学習・資料整理・情報収集のほぼ全てに対応可能。数学の難問はGemini FreeかDeepSeekが最適です。
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- B: 課金 -->
+                    <div class="bg-white border-2 border-blue-200 rounded-2xl p-6 shadow-sm">
+                        <h3 class="text-lg font-bold text-blue-900 mb-3">B. 月3,000円だけ課金するなら</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                            <strong class="text-blue-700 text-base block mb-1">Gemini (Google AI Pro) が最優先。</strong>
+                            NotebookLM Pro、Deep Research、スライド連携が含まれコスパ最強。大学生は公式の<strong class="text-red-600">最大15ヶ月無料キャンペーン</strong>を必ず確認すること。
+                        </p>
+                    </div>
+
+                    <!-- C: ソフバン -->
+                    <div class="bg-white border-2 border-indigo-200 rounded-2xl p-6 shadow-sm">
+                        <h3 class="text-lg font-bold text-indigo-900 mb-3">C. SoftBank系スマホユーザーなら</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                            <strong class="text-indigo-700 text-base block mb-1">Perplexity Pro (6ヶ月無料) を真っ先に使う。</strong>
+                            複数の最高性能AI（GPT-4o, Claude等）を月3000円相当で使い放題。Gemini Freeと組み合わせる2本立てが非常に強力です。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
